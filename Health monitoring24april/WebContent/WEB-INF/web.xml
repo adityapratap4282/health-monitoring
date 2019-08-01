@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>Health monitoring</display-name>
+  <welcome-file-list>
+    <welcome-file>/views/LoginPage.jsp</welcome-file>
+<!--     <welcome-file>forgot.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file> -->
+  </welcome-file-list>
+  
+  
+  <filter>
+    <filter-name>SignUpFilter</filter-name>
+    <filter-class>com.cognizant.PatientHealthMonitoringPortal.Filters.SignUpFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SignUpFilter</filter-name>
+    <url-pattern>/views/SignUpFilter.do</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.cognizant.PatientHealthMonitoringPortal.Filters.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/views/LoginFilter.do</url-pattern>
+  </filter-mapping>
+  
+   <filter>
+    <filter-name>SignUpFilterDoctor</filter-name>
+    <filter-class>com.cognizant.PatientHealthMonitoringPortal.Filters.SignUpFilterDoctor</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SignUpFilterDoctor</filter-name>
+    <url-pattern>/views/SignUpFilterDoctor.do</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <filter>
+    <filter-name>LoginFilterDoctor</filter-name>
+    <filter-class>com.cognizant.PatientHealthMonitoringPortal.Filters.LoginFilterDoctor</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilterDoctor</filter-name>
+    <url-pattern>/views/LoginFilterDoctor.do</url-pattern>
+  </filter-mapping>
+  
+ 
+  
+  
+   <servlet>
+    <servlet-name>RegistrationUser</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.Controllers.HealthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationUser</servlet-name>
+    <url-pattern>/views/HealthServlet.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <servlet-name>RegistrationDoctor</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.Controllers.HealthServletDoctor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationDoctor</servlet-name>
+    <url-pattern>/views/HealthServletDoctor.do</url-pattern>
+  </servlet-mapping>
+  
+   
+  
+  <servlet>
+    <servlet-name>BloodCount</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.HealthMonitoring.BloodCount</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>BloodCount</servlet-name>
+    <url-pattern>/views/BloodDetails</url-pattern>
+  </servlet-mapping>
+  
+ 
+  <servlet>
+    <servlet-name>BMI</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.HealthMonitoring.BMI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BMI</servlet-name>
+    <url-pattern>/views/BMI_Details</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  
+    <servlet-name>Glucose</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.HealthMonitoring.Glucose</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Glucose</servlet-name>
+    <url-pattern>/views/Glucose</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  
+    <servlet-name>ForgotDoctor</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.Forgot.ForgotDoctor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgotDoctor</servlet-name>
+    <url-pattern>/views/ForgotDoctor</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>ForgotUser</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.Forgot.ForgotUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgotUser</servlet-name>
+    <url-pattern>/views/ForgotUser</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>NewPasswordUser</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.Forgot.NewPasswordUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewPasswordUser</servlet-name>
+    <url-pattern>/views/NewPasswordUser</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>NewPasswordDoctor</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.Forgot.NewPasswordDoctor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewPasswordDoctor</servlet-name>
+    <url-pattern>/views/NewPasswordDoctor</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>Risk</servlet-name>
+    <servlet-class>com.cognizant.PatientHealthMonitoringPortal.HealthMonitoring.Risk</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Risk</servlet-name>
+    <url-pattern>/views/Risk.do</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>
